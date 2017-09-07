@@ -1,0 +1,5 @@
+#!/usr/bin/expect -f
+spawn ssh jqin4@unix.ic.ucsc.edu
+expect "password:"
+send "###########\r"
+interact

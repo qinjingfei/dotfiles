@@ -22,14 +22,11 @@ sudo usermod -aG docker jing
 sudo systemctl start docker
 sudo systemctl enable docker
 
-# #Spf13 vim
-# curl http://j.mp/spf13-vim3 -L -o - | sh
-
 sudo pip3 install neovim beautifulsoup4 lxml requests loads mps-youtube youtube_dl
 sudo pip install --upgrade pip
 sudo pip2 install --upgrade pip
 
-sudo npm install -g speed-test gtop browser-sync
+sudo npm install -g speed-test gtop browser-sync vue-cli
 
 clear
 echo "===================="

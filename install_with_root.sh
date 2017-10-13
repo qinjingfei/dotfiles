@@ -5,7 +5,7 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt install -y \
 	git curl tmux fish screenfetch sl cowsay cmatrix npm python-pip python3-pip  vim\
 	ruby build-essential mpv expect fortune-mod vlc nodejs-legacy htop glances mosh \
-	nmap\
+	nmap aria2 tlp powertop silversearcher-ag \
 	docker docker-compose docker.io     \
 
 sudo npm install -g speed-test gtop browser-sync vue-cli
@@ -23,6 +23,10 @@ git config --global user.email "qinjingfei1@gmail.com"
 sudo usermod -aG docker jing
 sudo systemctl start docker
 sudo systemctl enable docker
+
+sudo tlp start
+sudo cp ./startup.sh /usr/bin/
+sudo cp ./rc.local /etc/
 
 
 clear

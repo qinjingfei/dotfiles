@@ -15,6 +15,16 @@ sudo pip3 install neovim beautifulsoup4 lxml requests loads mps-youtube youtube_
 sudo pip install --upgrade pip
 sudo pip3 install --upgrade pip
 
+sudo add-apt-repository ppa:snwh/pulp
+# update repository info
+sudo apt-get update
+# install icon theme
+sudo apt-get install paper-icon-theme
+# install cursor theme
+sudo apt-get install paper-cursor-theme
+# install gtk theme
+sudo apt-get install paper-gtk-theme
+
 git config --global user.name "Jingfei Qin"
 git config --global user.email "qinjingfei1@gmail.com"
 

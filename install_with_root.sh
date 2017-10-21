@@ -8,9 +8,10 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt install -y \
 	git curl tmux fish screenfetch sl cowsay cmatrix npm python-pip python3-pip  vim\
 	ruby build-essential mpv expect fortune-mod vlc nodejs-legacy htop glances mosh \
-	nmap aria2 tlp powertop silversearcher-ag software-properties-common \
-	docker docker-compose docker.io     \
-	tor-browser neovim\
+	nmap aria2 tlp powertop silversearcher-ag software-properties-common            \
+        xserver-xorg-input-libinput xorg-input-abi-22 xserver-xorg-core                 \
+	docker docker-compose docker.io                                                 \
+	tor-browser neovim                                                              \
 
 sudo npm install -g speed-test gtop browser-sync vue-cli
 
@@ -33,6 +34,7 @@ sudo tlp start
 sudo cp ./startup.sh /usr/bin/
 sudo cp ./rc.local /etc/
 sudo cp ./ucsclogin /usr/bin/
+sudo cp ./90-libinput.conf  /usr/share/X11/xorg.conf.d/
 
 # sudo add-apt-repository ppa:snwh/pulp
 # sudo apt-get update

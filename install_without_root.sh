@@ -12,6 +12,6 @@ wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 wget "https://download-cf.jetbrains.com/toolbox/jetbrains-toolbox-1.4.2492.tar.gz"
 
 
-mv *.gz ~/Downloads
-mv *.deb ~/Downloads
-mv *.jpg ~/Picturese
+mv *.gz ~/Documents/
+mv *.deb ~/Downloads/
+mv *.jpg ~/Picturese/

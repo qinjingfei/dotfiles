@@ -1,21 +1,27 @@
 #!/bin/bash
 
+#ppa
+sudo add-apt-repository ppa:webupd8team/tor-browser
+sudo add-apt-repository ppa:neovim-ppa/stable
+
 sudo apt update -y && sudo apt upgrade -y
 sudo apt install -y \
 	git curl tmux fish screenfetch sl cowsay cmatrix npm python-pip python3-pip  vim\
 	ruby build-essential mpv expect fortune-mod vlc nodejs-legacy htop glances mosh \
 	nmap aria2 tlp powertop silversearcher-ag software-properties-common \
 	docker docker-compose docker.io     \
+	tor-browser neovim\
 
 sudo npm install -g speed-test gtop browser-sync vue-cli
 
 sudo pip install neovim
 sudo pip3 install neovim beautifulsoup4 lxml requests loads mps-youtube youtube_dl
 sudo pip install --upgrade pip
-sudo pip3 install --upgrade pip
+sudo pip3 install --upgrade pip<
 
 git config --global user.name "Jingfei Qin"
 git config --global user.email "qinjingfei1@gmail.com"
+git config --global push.default simple
 
 #run docker without root
 sudo usermod -aG docker jing

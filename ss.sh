@@ -4,7 +4,7 @@ echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
 sysctl -p
 apt update; apt upgrade
-apt install python-pip
+apt install python-pip -y
 wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools-12.0.3.tar.gz#md5=f07e4b0f4c1c9368fcd980d888b29a65 
 tar -zxvf setuptools-12.0.3.tar.gz
 cd setuptools-12.0.3/ 

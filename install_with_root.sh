@@ -6,7 +6,7 @@ sudo apt install -y \
 	ruby build-essential mpv expect fortune-mod vlc nodejs htop glances mosh        \
 	nmap aria2 tlp powertop silversearcher-ag                                       \
 	docker docker-compose docker.io                                                 \
-	gnome-tweak-tool chrome-gnome-shell                                             \
+#	gnome-tweak-tool chrome-gnome-shell                                             \
 
 sudo npm install -g speed-test gtop browser-sync vue-cli
 
@@ -32,11 +32,11 @@ sudo cp ./ucsclogin /usr/bin/
 
 
 #删除多余的软件，游戏
-sudo apt-get autoremove firefox firefox-locale-en \
-	 		firefox-locale-zh-hans rhythmbox gnome-sudoku \
-	  		gnome-mahjongg gnome-mines transmission-common \
-	   		cheese totem-common aisleriot gedit gnome-online-accounts \
-	    		gnome-calendar simple-scan shotwell shotwell-common thunderbird
+#sudo apt-get autoremove firefox firefox-locale-en \
+#	 		firefox-locale-zh-hans rhythmbox gnome-sudoku \
+#	  		gnome-mahjongg gnome-mines transmission-common \
+#	   		cheese totem-common aisleriot gedit gnome-online-accounts \
+#	    		gnome-calendar simple-scan shotwell shotwell-common thunderbird
 
 
 # sudo add-apt-repository ppa:snwh/pulp

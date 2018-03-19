@@ -6,12 +6,10 @@ sudo apt install -y \
 	ruby build-essential mpv expect fortune-mod vlc nodejs htop glances mosh        \
 	nmap aria2 tlp powertop silversearcher-ag                                       \
 	docker docker-compose docker.io                                                 \
-#	gnome-tweak-tool chrome-gnome-shell                                             \
 
 sudo npm install -g speed-test gtop browser-sync vue-cli
 
-sudo pip install neovim
-sudo pip3 install neovim beautifulsoup4 lxml requests loads mps-youtube youtube_dl
+sudo pip3 install beautifulsoup4 lxml requests loads mps-youtube youtube_dl
 sudo pip install --upgrade pip
 sudo pip3 install --upgrade pip3
 
@@ -28,7 +26,6 @@ sudo docker pull xujinkai/aria2-with-webui
 sudo tlp start
 sudo cp ./startup.sh /usr/bin/
 sudo cp ./rc.local /etc/
-sudo cp ./ucsclogin /usr/bin/
 
 
 #删除多余的软件，游戏

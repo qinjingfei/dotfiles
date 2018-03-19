@@ -1,19 +1,15 @@
 #!/bin/bash
 
-sudo add-apt-repository ppa:hzwhuang/ss-qt5
-sudo add-apt-repository ppa:fish-shell/release-2
-ssh-keygen -t rsa -b 4096 -C "qinjingfei1@gmail.com"
-
 sudo apt update -y && sudo apt upgrade -y
 sudo apt install -y \
 	git curl tmux fish screenfetch sl cowsay cmatrix npm python-pip python3-pip  vim\
 	ruby build-essential mpv expect fortune-mod vlc nodejs htop glances mosh        \
 	nmap aria2 tlp powertop silversearcher-ag  software-properties-common           \
-	docker docker-compose docker.io  shadowsocks-qt5                                \
-
+	docker docker-compose docker.io
+npm config set registry https://registry.npm.taobao.org
 sudo npm install -g speed-test gtop browser-sync vue-cli
 
-sudo pip3 install beautifulsoup4 lxml requests loads mps-youtube youtube_dl
+sudo pip3 install beautifulsoup4 lxml requests loads
 sudo pip install --upgrade pip
 sudo pip3 install --upgrade pip3
 
@@ -21,21 +17,10 @@ git config --global user.name "Jingfei Qin"
 git config --global user.email "qinjingfei1@gmail.com"
 git config --global push.default simple
 
-#run docker without root
 sudo usermod -aG docker jing
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo docker pull xujinkai/aria2-with-webui
-
-sudo tlp start
-sudo cp ./startup.sh /usr/bin/
-sudo cp ./rc.local /etc/
-sudo cp 90-libinput.conf /usr/share/X11/xorg.conf.d/
-
-# 非root权限
-su - jing
-npm config set registry https://registry.npm.taobao.org
-cp tmux.conf_mac ~/.tmux.conf
 
 docker run -d \                                                                                                                                                    15:51:03
 --name aria2 \
@@ -45,8 +30,20 @@ docker run -d \                                                                 
 -v ~/Documents/dotfiles/aria2.conf:/conf/aria2.conf \
 xujinkai/aria2-with-webui
 docker stop aria2
+
+sudo tlp start
+sudo cp ./startup.sh /usr/bin/
+sudo cp ./rc.local /etc/
+sudo cp 90-libinput.conf /usr/share/X11/xorg.conf.d/
+sudo cp ./daemon.json /etc/docker/daemon.json
+
 chsh -s $(which fish)
 #git clone git@github.com:acgotaku/BaiduExporter.git
+#sudo add-apt-repository ppa:hzwhuang/ss-qt5
+#sudo add-apt-repository ppa:fish-shell/release-2
+#ssh-keygen -t rsa -b 4096 -C "qinjingfei1@gmail.com"
+#curl -L https://get.oh-my.fish | fish
+# curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
 
 
 clear

@@ -1,11 +1,15 @@
 #!/bin/bash
 
+sudo add-apt-repository ppa:hzwhuang/ss-qt5
+sudo add-apt-repository ppa:fish-shell/release-2
+ssh-keygen -t rsa -b 4096 -C "qinjingfei1@gmail.com"
+
 sudo apt update -y && sudo apt upgrade -y
 sudo apt install -y \
 	git curl tmux fish screenfetch sl cowsay cmatrix npm python-pip python3-pip  vim\
 	ruby build-essential mpv expect fortune-mod vlc nodejs htop glances mosh        \
-	nmap aria2 tlp powertop silversearcher-ag                                       \
-	docker docker-compose docker.io                                                 \
+	nmap aria2 tlp powertop silversearcher-ag  software-properties-common           \
+	docker docker-compose docker.io  shadowsocks-qt5                                \
 
 sudo npm install -g speed-test gtop browser-sync vue-cli
 
@@ -26,21 +30,24 @@ sudo docker pull xujinkai/aria2-with-webui
 sudo tlp start
 sudo cp ./startup.sh /usr/bin/
 sudo cp ./rc.local /etc/
+sudo cp 90-libinput.conf /usr/share/X11/xorg.conf.d/
 
+# 非root权限
+su - jing
+npm config set registry https://registry.npm.taobao.org
+cp tmux.conf_mac ~/.tmux.conf
 
-#删除多余的软件，游戏
-#sudo apt-get autoremove firefox firefox-locale-en \
-#	 		firefox-locale-zh-hans rhythmbox gnome-sudoku \
-#	  		gnome-mahjongg gnome-mines transmission-common \
-#	   		cheese totem-common aisleriot gedit gnome-online-accounts \
-#	    		gnome-calendar simple-scan shotwell shotwell-common thunderbird
+docker run -d \                                                                                                                                                    15:51:03
+--name aria2 \
+-p 6800:6800 \
+-p 80:80 \
+-v ~/Downloads/aria2:/data \
+-v ~/Documents/dotfiles/aria2.conf:/conf/aria2.conf \
+xujinkai/aria2-with-webui
+docker stop aria2
+chsh -s $(which fish)
+#git clone git@github.com:acgotaku/BaiduExporter.git
 
-
-# sudo add-apt-repository ppa:snwh/pulp
-# sudo apt-get update
-# sudo apt-get install paper-icon-theme
-# sudo apt-get install paper-cursor-theme
-# sudo apt-get install paper-gtk-theme
 
 clear
 echo "===================="

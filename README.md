@@ -1,30 +1,12 @@
 # dotfiles
 
+## About
 
-* i3_config
+这里放着一些配置文件和脚本文件
 
-config file for i3-gaps
+## Install
 
-* aria2.conf
+```
+sudo sh ./elementary_post_installation.sh
 
-config file for aria2
-
-* new_system_install_arch.sh
-
-post arch linux installation script
-
-* new_system_install_ubuntu.sh
-
-post ubuntu linux installation script
-
-* tmux.conf  tmux.conf_mac
-
-config file for tmux
-
-* Xresources
-
-config file for rofi
-
-* xinitrc
-
-minor tweaks for sogou
+```

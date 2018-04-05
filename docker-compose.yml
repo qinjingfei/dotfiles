@@ -1,0 +1,49 @@
+version: '2'
+
+services:
+   
+   nginx:
+    image: nginx:latest
+    ports:
+        - '80:80'
+        - '443:443'
+    volumes:
+        - ./nginx:/etc/nginx/conf.d
+        - ./logs/nginx:/var/log/nginx
+        - ./wordpress:/var/www/html
+        - /etc/letsencrypt:/etc/letsencrypt
+        - /etc/ssl:/etc/ssl
+    links:
+        - wordpress
+    restart: always
+    container_name: qinjingfei_nginx
+   
+   db:
+     image: mariadb:latest
+     ports:
+       - '3306:3306'
+     volumes:
+       - ./db-data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: qinjingfei
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+     container_name: qinjingfei_db
+
+   wordpress:
+     depends_on:
+       - db
+     image: wordpress:4.7.1-php7.0-fpm
+     volumes:
+       - ./wordpress:/var/www/html
+     restart: always
+     ports:
+       - "9000:9000"
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+     container_name: qinjingfei_wp

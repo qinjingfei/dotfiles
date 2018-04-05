@@ -1,10 +1,11 @@
 #!/bin/bash
 
 
-Software="git curl tmux fish screenfetch sl cowsay cmatrix npm python-pip python3-pip vim
-					ruby build-essential mpv expect fortune-mod vlc nodejs htop glances mosh
-					nmap aria2 tlp powertop silversearcher-ag  software-properties-common
-					docker docker-compose docker.io proxychains"
+Software="git curl tmux fish screenfetch sl cowsay cmatrix npm python-pip
+					python3-pip vim ruby build-essential mpv expect fortune-mod vlc
+					nodejs htop glances mosh nmap aria2 tlp powertop silversearcher-ag
+					software-properties-common docker docker-compose docker.io
+					proxychains"
 
 sudo apt update -y && sudo apt upgrade -y;sudo apt install -y $Software;
 npm config set registry https://registry.npm.taobao.org
@@ -12,7 +13,11 @@ sudo npm install -g speed-test gtop browser-sync vue-cli
 
 sudo add-apt-repository -y ppa:hzwhuang/ss-qt5
 sudo add-apt-repository -y ppa:fish-shell/release-2
-sudo apt update; sudo apt install -y shadowsocks-qt5 fish;
+sudo add-apt-repository -y ppa:rvm/smplayer
+sudo apt update;
+sudo apt install -y \
+								    shadowsocks-qt5 fish smplayer smplayer-themes \
+										smplayer-skins;
 
 sudo pip3 install beautifulsoup4 lxml requests loads
 sudo pip install --upgrade pip
